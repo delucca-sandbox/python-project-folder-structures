@@ -1,0 +1,10 @@
+action: unit-tests, msg: developpkg
+cwd: /home/odelucca/Code/sandbox/python-project-folder-structures/cli-structured
+cmd: /home/odelucca/Code/sandbox/python-project-folder-structures/cli-structured/.tox/unit-tests/bin/python -m pip install --no-deps -e .
+Obtaining file:///home/odelucca/Code/sandbox/python-project-folder-structures/cli-structured
+Installing collected packages: foo
+  Found existing installation: foo 1.0.0
+    Uninstalling foo-1.0.0:
+      Successfully uninstalled foo-1.0.0
+  Running setup.py develop for foo
+Successfully installed foo

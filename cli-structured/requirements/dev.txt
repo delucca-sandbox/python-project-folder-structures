@@ -1,0 +1,6 @@
+# Extends the common requirements and specifies development-specific requirements
+
+-r common.txt
+
+tox==3.14.1
+black==19.10b0

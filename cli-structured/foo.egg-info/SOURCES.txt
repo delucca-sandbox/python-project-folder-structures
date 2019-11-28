@@ -1,0 +1,11 @@
+setup.py
+foo/__init__.py
+foo/foo.py
+foo.egg-info/PKG-INFO
+foo.egg-info/SOURCES.txt
+foo.egg-info/dependency_links.txt
+foo.egg-info/requires.txt
+foo.egg-info/top_level.txt
+foo/cli/__init__.py
+foo/core/__init__.py
+scripts/build_foo.py

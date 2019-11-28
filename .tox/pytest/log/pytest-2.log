@@ -1,0 +1,4 @@
+action: pytest, msg: developpkg
+cwd: /home/odelucca/Code/sandbox/python-project-folder-structures
+cmd: /home/odelucca/Code/sandbox/python-project-folder-structures/.tox/pytest/bin/python -m pip install --exists-action w -e .
+ERROR: File "setup.py" not found. Directory cannot be installed in editable mode: /home/odelucca/Code/sandbox/python-project-folder-structures

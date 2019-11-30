@@ -1,9 +1,0 @@
-action: unit-test, msg: getenv
-cwd: /home/odelucca/Code/sandbox/python-project-folder-structures/cli-structured/.tox
-cmd: /home/odelucca/.pyenv/versions/3.7.5/envs/sandbox/bin/python3.7 -m virtualenv --no-download --python /home/odelucca/.pyenv/versions/3.7.5/envs/sandbox/bin/python3.7 unit-test
-Already using interpreter /home/odelucca/.pyenv/versions/3.7.5/envs/sandbox/bin/python3.7
-Using base prefix '/home/odelucca/.pyenv/versions/3.7.5'
-New python executable in /home/odelucca/Code/sandbox/python-project-folder-structures/cli-structured/.tox/unit-test/bin/python3.7
-Also creating executable in /home/odelucca/Code/sandbox/python-project-folder-structures/cli-structured/.tox/unit-test/bin/python
-Installing setuptools, pip, wheel...
-done.

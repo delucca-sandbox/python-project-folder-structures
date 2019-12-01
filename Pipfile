@@ -1,0 +1,27 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+black = "==19.10b0"
+pytest = "==5.3.1"
+behave = "*"
+isort = "*"
+flake8 = "*"
+mypy = "*"
+
+[packages]
+requests = "==2.22.0"
+invoke = "*"
+
+[requires]
+python_version = "3.7"
+
+[scripts]
+test = "inv tests.unit tests.integration tests.acceptance"
+test_unit = "inv tests.unit"
+test_integration = "inv tests.integration"
+test_acceptance = "inv tests.acceptance"
+format = "inv conventions.format-code conventions.import-order"
+check = "inv validators.conventions validators.static-types"

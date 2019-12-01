@@ -1,5 +1,0 @@
-action: python, msg: developpkg
-cwd: /home/odelucca/Code/sandbox/python-project-folder-structures
-cmd: /home/odelucca/Code/sandbox/python-project-folder-structures/.tox/python/bin/python -m pip install --no-deps -e .
-Obtaining file:///home/odelucca/Code/sandbox/python-project-folder-structures
-ERROR: Files/directories not found in /home/odelucca/Code/sandbox/python-project-folder-structures/

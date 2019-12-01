@@ -4,4 +4,7 @@
 */**/*.pyc
 */*.egg-info
 */.tox
+
 .tox
+.pytest_cache
+.mypy_cache

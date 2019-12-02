@@ -1,23 +1,38 @@
 repos:
   - repo: local
     hooks:
-      - id: autoformat
-        name: autoformat
+      - id: isort
+        name: isort
         stages: [commit]
         language: system
-        entry: pipenv run autoformat
+        entry: pipenv run isort
         types: [python]
 
-      - id: lint
-        name: lint
+      - id: black
+        name: black
         stages: [commit]
         language: system
-        entry: pipenv run lint
+        entry: pipenv run black
         types: [python]
 
-      - id: tests_unit
-        name: tests_unit
+      - id: flake8
+        name: flake8
         stages: [commit]
         language: system
-        entry: pipenv run tests_unit
+        entry: pipenv run flake8
+        types: [python]
+
+      - id: mypy
+        name: mypy
+        stages: [commit]
+        language: system
+        entry: pipenv run mypy
+        types: [python]
+        pass_filenames: false
+
+      - id: pytest
+        name: pytest
+        stages: [commit]
+        language: system
+        entry: pipenv run pytest
         types: [python]

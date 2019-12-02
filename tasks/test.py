@@ -14,6 +14,11 @@ def integration(ctx):
 
 
 @task
+def contract(ctx):
+    handle_contract_test(ctx)
+
+
+@task
 def acceptance(ctx):
     handle_acceptance_test(ctx)
 
@@ -30,6 +35,12 @@ def handle_integration_test(ctx: Context) -> None:
     ctx.run("pytest -m integration", pty=True)
 
 
+def handle_contract_test(ctx: Context) -> None:
+    helpers.print_header("CONTRACT TESTS")
+
+    ctx.run("pytest -m contract", pty=True)
+
+
 def handle_acceptance_test(ctx: Context) -> None:
     helpers.print_header("ACCEPTANCE TESTS")
 
@@ -37,7 +48,7 @@ def handle_acceptance_test(ctx: Context) -> None:
 
 
 def build_tasks(collection: Collection) -> None:
-    tasks = [unit, integration, acceptance]
+    tasks = [unit, integration, contract, acceptance]
 
     for new_task in tasks:
         ns.add_task(new_task)

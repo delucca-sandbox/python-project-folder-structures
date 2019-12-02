@@ -26,6 +26,7 @@ def build_markers() -> tuple:
     avaiable = [
         dict(rule="foo/", marker=pytest.mark.unit),
         dict(rule="/integration/", marker=pytest.mark.integration),
+        dict(rule="/contract/", marker=pytest.mark.contract),
     ]
 
     return common, avaiable

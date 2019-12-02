@@ -4,8 +4,8 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
-black = "==19.10b0"
-pytest = "==5.3.1"
+black = "*"
+pytest = "*"
 behave = "*"
 isort = "*"
 flake8 = "*"
@@ -13,7 +13,7 @@ mypy = "*"
 pre-commit = "*"
 
 [packages]
-requests = "==2.22.0"
+requests = "*"
 invoke = "*"
 pytest-cov = "*"
 
@@ -21,13 +21,13 @@ pytest-cov = "*"
 python_version = "3.7"
 
 [scripts]
-lint = "inv lint.code lint.types"
-lint_code = "inv lint.code"
-lint_types = "inv lint.types"
-autoformat = "inv autoformat.imports autoformat.code"
-autoformat_code = "inv autoformat.code"
-autoformat_imports = "inv autoformat.imports"
-test = "inv test.unit test.integration test.acceptance"
-test_unit = "inv test.unit"
-test_integration = "inv test.integration"
-test_acceptance = "inv test.acceptance"
+lint = "invoke lint.code lint.types"
+lint_code = "invoke lint.code"
+lint_types = "invoke lint.types"
+autoformat = "invoke autoformat.imports autoformat.code"
+autoformat_code = "invoke autoformat.code"
+autoformat_imports = "invoke autoformat.imports"
+test = "invoke test.unit test.integration test.acceptance"
+test_unit = "invoke test.unit"
+test_integration = "invoke test.integration"
+test_acceptance = "invoke test.acceptance"

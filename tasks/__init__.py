@@ -1,13 +1,13 @@
 from invoke import Collection
 
-from . import tests, conventions, validators
+from . import autoformat, lint, test
 
 
 def build_subcollections(collection: Collection) -> None:
-  subcollections = [tests, conventions, validators]
+    subcollections = [autoformat, lint, test]
 
-  for subcollection in subcollections:
-    collection.add_collection(subcollection)
+    for subcollection in subcollections:
+        collection.add_collection(subcollection)
 
 
 ns = Collection()

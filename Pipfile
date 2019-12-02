@@ -14,14 +14,19 @@ mypy = "*"
 [packages]
 requests = "==2.22.0"
 invoke = "*"
+pytest-cov = "*"
 
 [requires]
 python_version = "3.7"
 
 [scripts]
-test = "inv tests.unit tests.integration tests.acceptance"
-test_unit = "inv tests.unit"
-test_integration = "inv tests.integration"
-test_acceptance = "inv tests.acceptance"
-format = "inv conventions.format-code conventions.import-order"
-check = "inv validators.conventions validators.static-types"
+lint = "inv lint.code lint.types"
+lint_code = "inv lint.code"
+lint_types = "inv lint.types"
+autoformat = "inv autoformat.code autoformat.imports"
+autoformat_code = "inv autoformat.code"
+autoformat_imports = "inv autoformat.imports"
+test = "inv test.unit test.integration test.acceptance"
+test_unit = "inv test.unit"
+test_integration = "inv test.integration"
+test_acceptance = "inv test.acceptance"

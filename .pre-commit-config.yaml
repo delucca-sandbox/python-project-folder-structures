@@ -1,0 +1,23 @@
+repos:
+  - repo: local
+    hooks:
+      - id: autoformat
+        name: autoformat
+        stages: [commit]
+        language: system
+        entry: pipenv run autoformat
+        types: [python]
+
+      - id: lint
+        name: lint
+        stages: [commit]
+        language: system
+        entry: pipenv run lint
+        types: [python]
+
+      - id: tests_unit
+        name: tests_unit
+        stages: [commit]
+        language: system
+        entry: pipenv run tests_unit
+        types: [python]

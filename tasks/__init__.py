@@ -1,14 +1,36 @@
-from invoke import Collection
+from invoke import task
 
-from . import autoformat, lint, test
+from tasks.lint.constants import LINT_SCOPES_ALLOWED
+from tasks.lint.handlers import run_lint
+from tasks.test.constants import TEST_PHASES_ALLOWED
+from tasks.test.handlers import run_tests
+
+from .actions import echo_message
+from .constants import (
+    MESSAGE_FINISHED_TASK,
+    MESSAGE_STARTING_TASK,
+    TASK_NAME_LINT,
+    TASK_NAME_TEST,
+)
 
 
-def build_subcollections(collection: Collection) -> None:
-    subcollections = [autoformat, lint, test]
+@task
+def test(ctx, phases=TEST_PHASES_ALLOWED):
+    phases = phases.split(",")
+    message_starting = MESSAGE_STARTING_TASK.format(TASK_NAME_TEST)
+    message_finished = MESSAGE_FINISHED_TASK.format(TASK_NAME_TEST)
 
-    for subcollection in subcollections:
-        collection.add_collection(subcollection)
+    echo_message(message_starting)
+    run_tests(ctx, phases)
+    echo_message(message_finished)
 
 
-ns = Collection()
-build_subcollections(ns)
+@task
+def lint(ctx, scopes=LINT_SCOPES_ALLOWED):
+    scopes = scopes.split(",")
+    message_starting = MESSAGE_STARTING_TASK.format(TASK_NAME_LINT)
+    message_finished = MESSAGE_FINISHED_TASK.format(TASK_NAME_LINT)
+
+    echo_message(message_starting)
+    run_lint(ctx, scopes)
+    echo_message(message_finished)

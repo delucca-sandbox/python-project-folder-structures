@@ -1,17 +1,11 @@
 from invoke import Context
 
-from tasks.actions import echo_message
-from tasks.constants import ECHO_LEVEL_RUNNING
+from tasks.actions import run_multiple_commands
+from tasks.validators import validate_options
 
-from .constants import COMMANDS, MESSAGE_PHASE_RUNNING
-from .validators import validate_phases
+from .constants import COMMANDS, MESSAGE_PHASE_RUNNING, TEST_PHASES_ALLOWED
 
 
-@validate_phases
+@validate_options(TEST_PHASES_ALLOWED)
 def run_tests(ctx: Context, phases: list) -> None:
-    for phase in phases:
-        command = COMMANDS.get(phase)
-        message = MESSAGE_PHASE_RUNNING.format(phase)
-
-        echo_message(message, level=ECHO_LEVEL_RUNNING)
-        ctx.run(command, pty=True)
+    run_multiple_commands(ctx, phases, COMMANDS, pattern=MESSAGE_PHASE_RUNNING)

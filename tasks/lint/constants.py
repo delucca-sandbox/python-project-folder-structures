@@ -1,6 +1,5 @@
-LINT_SCOPES_ALLOWED = "code,imports"
+LINT_SCOPES_ALLOWED = "code,types"
 
-MESSAGE_SCOPE_NOT_FOUND = "'{}' lint scope does not exist"
 MESSAGE_SCOPE_RUNNING = "{} scope"
 
-COMMANDS = dict(code="black .", imports="isort -y",)
+COMMANDS = dict(code="flake8", types="mypy")
